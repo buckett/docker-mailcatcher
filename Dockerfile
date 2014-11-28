@@ -21,10 +21,12 @@ RUN \
   gem install i18n -v 0.6.11 --no-rdoc --no-ri && \
   gem install mailcatcher --no-rdoc --no-ri
 
-
-CMD ["mailcatcher", "-f"]
-
 EXPOSE 1025
 EXPOSE 1080
+
+# Allocate a terminal, otherwise it backgrounds and docker exit
+# Listening on localhost inside a container isn't very useful
+CMD ["mailcatcher", "-f" "--ip" "0.0.0.0"]
+
 
 
