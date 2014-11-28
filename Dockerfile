@@ -16,6 +16,9 @@ RUN \
   rm -rf /var/lib/apt/lists/* 
 
 RUN \
+  # Doesn't work with newer versions of i18n
+  # https://github.com/sj26/mailcatcher/issues/155
+  gem install i18n -v 0.6.11 --no-rdoc --no-ri && \
   gem install mailcatcher --no-rdoc --no-ri
 
 
