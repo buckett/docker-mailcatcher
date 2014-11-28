@@ -1,8 +1,9 @@
 # MailCatcher Dockerfile
 #
-# https://github.com/dockerfile/mysql
+# https://github.com/buckett/docker-mailcatcher
 #
-# Pull base image.
+# Pull base image (nice and small).
+
 FROM debian:jessie
 
 MAINTAINER Matthew Buckett <matthew.buckett@it.ox.ac.uk>
