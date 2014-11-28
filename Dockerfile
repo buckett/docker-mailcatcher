@@ -10,7 +10,8 @@ MAINTAINER Matthew Buckett <matthew.buckett@it.ox.ac.uk>
 # Install stuff for doing ruby development and building mailcatcher.
 RUN \
   apt-get update && \
-  DEBIAN_FRONTEND=noninteractive apt-get install -y ruby ruby-dev make g++ libsqlite3-0 libsqlite3-dev
+  DEBIAN_FRONTEND=noninteractive apt-get install -y ruby ruby-dev make g++ libsqlite3-0 libsqlite3-dev && \
+  apt-get clean && \
   rm -rf /var/lib/apt/lists/* 
 
 RUN \
